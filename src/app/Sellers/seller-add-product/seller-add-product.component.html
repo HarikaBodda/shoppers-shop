@@ -1,0 +1,221 @@
+<div id="app">
+    <div class="app-content">
+
+        <!--====== Section 1 ======-->
+        <div class="u-s-p-y-60">
+
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <div class="breadcrumb__wrap">
+                            <ul class="breadcrumb__list">
+                                <li class="has-separator">
+
+                                    <a href="index.html">Seller</a>
+                                </li>
+                                <li class="is-marked">
+
+                                    <a href="dash-address-add.html">Add Product</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====== End - Section 1 ======-->
+
+
+        <!--====== Section 2 ======-->
+        <div class="u-s-p-b-60">
+
+            <!--====== Section Content ======-->
+            <div class="section__content">
+                <div class="dash">
+                    <div class="container">
+                        <div class="row">
+                            <!-- <div class="col-lg-3 col-md-12">
+
+                                 <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
+                                    <div class="dash__pad-1">
+
+                                        <span class="dash__text u-s-m-b-16">Hello, John Doe</span>
+                                        <ul class="dash__f-list">
+                                            <li>
+
+                                                <a href="dashboard.html">Manage My Account</a></li>
+                                            <li>
+
+                                                <a href="dash-my-profile.html">My Profile</a></li>
+                                            <li>
+
+                                                <a class="dash-active" href="dash-address-book.html">Address Book</a></li>
+                                            <li>
+
+                                                <a href="dash-track-order.html">Track Order</a></li>
+                                            <li>
+
+                                                <a href="dash-my-order.html">My Orders</a></li>
+                                            <li>
+
+                                                <a href="dash-payment-option.html">My Payment Options</a></li>
+                                            <li>
+
+                                                <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
+                                    <div class="dash__pad-1">
+                                        <ul class="dash__w-list">
+                                            <li>
+                                                <div class="dash__w-wrap">
+
+                                                    <span class="dash__w-icon dash__w-icon-style-1"><i class="fas fa-cart-arrow-down"></i></span>
+
+                                                    <span class="dash__w-text">4</span>
+
+                                                    <span class="dash__w-name">Orders Placed</span></div>
+                                            </li>
+                                            <li>
+                                                <div class="dash__w-wrap">
+
+                                                    <span class="dash__w-icon dash__w-icon-style-2"><i class="fas fa-times"></i></span>
+
+                                                    <span class="dash__w-text">0</span>
+
+                                                    <span class="dash__w-name">Cancel Orders</span></div>
+                                            </li>
+                                            <li>
+                                                <div class="dash__w-wrap">
+
+                                                    <span class="dash__w-icon dash__w-icon-style-3"><i class="far fa-heart"></i></span>
+
+                                                    <span class="dash__w-text">0</span>
+
+                                                    <span class="dash__w-name">Wishlist</span></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </div> -->
+                            <div class="col-lg-12 col-md-12">
+                                <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white">
+                                    <div class="dash__pad-2">
+                                        <h1 class="dash__h1 u-s-m-b-14">Add New Product</h1>
+
+                                        <span class="dash__text u-s-m-b-30">We need complete details of the
+                                            product.</span>
+                                            <p>{{addProductMessage}}
+                                            </p>
+                                        <form class="dash-address-manipulation" #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="name">BRAND NAME *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="bname" placeholder="Brand Name" name="bname" ngModel>
+                                                </div>
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="pname">PRODUCT NAME *</label>
+
+                                                    <input class="input-text input-text--primary-style" name="pname" type="text"
+                                                        id="pname" placeholder="Product Name" ngModel>
+                                                </div>
+                                            </div>
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label"  for="pprice">PRODUCT PRICE *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="pprice" name="pprice" placeholder="Product Price" ngModel >
+                                                </div>
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="pdesc">PRODUCT DESCRIPTION
+                                                        *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="pdesc" name="pdesc" placeholder="Product Description" ngModel>
+                                                </div>
+                                            </div>
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="psize">PRODUCT SIZE
+                                                        *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="psize" name="psize" placeholder="Product Size" ngModel>
+                                                    <!--====== Select Box ======-->
+
+                                                    <!-- <label class="gl-label" for="psize">PRODUCT SIZE
+                                                        *</label>
+                                                        <select class="select-box select-box--primary-style"
+                                                        id="psize" name="psize" ngModel>
+                                                        <option selected value="">S</option>
+                                                        <option value="uae">M</option>
+                                                        <option value="uk">L</option>
+                                                        <option value="us">XL</option>
+                                                    </select> -->
+                                                    <!--====== End - Select Box ======-->
+                                                </div>
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="pcolor">PRODUCT COLOR
+                                                        *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="pcolor" name="pcolor" placeholder="Product Color" ngModel>
+                                                    <!--====== Select Box ======-->
+
+                                                    <!-- <label class="gl-label" for="pcolor">PRODUCT COLOR
+                                                        *</label>
+                                                        <select class="select-box select-box--primary-style"
+                                                        id="pcolor" name="pcolor" ngModel>
+                                                        <option selected value="">Green</option>
+                                                        <option value="al">Red</option>
+                                                        <option value="al">Mauve</option>
+                                                        <option value="ny">Peach</option>
+                                                    </select> -->
+                                                    <!--====== End - Select Box ======-->
+                                                </div>
+                                            </div>
+                                            <div class="gl-inline">
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="items">NO OF ITEMS *</label>
+
+                                                    <input class="input-text input-text--primary-style" name="items" type="text"
+                                                        id="items" placeholder="No of Items" ngModel>
+                                                </div>
+                                                <div class="u-s-m-b-30">
+
+                                                    <label class="gl-label" for="address-street"> IMAGE URL
+                                                        *</label>
+
+                                                    <input class="input-text input-text--primary-style" type="text"
+                                                        id="url" name="url" placeholder="url" ngModel>
+                                                </div>
+                                            </div>
+
+                                            <button class="btn btn--e-brand-b-2" type="submit">SAVE</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====== End - Section Content ======-->
+        </div>
+        <!--====== End - Section 2 ======-->
+    </div>
+    <!--====== End - App Content ======-->
+</div>
+<!--====== End - Main App ======-->

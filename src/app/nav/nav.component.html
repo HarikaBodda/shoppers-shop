@@ -1,0 +1,821 @@
+<body>
+  <header>
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+      <div class="row bg-secondary py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-dark" href="">FAQs</a>
+            <span class="text-muted px-2">|</span>
+            <a class="text-dark" href="">Help</a>
+            <span class="text-muted px-2">|</span>
+            <a class="text-dark" href="">Support</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="text-dark px-2" href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-dark pl-2" href="">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+          <a routerLink="/" class="text-decoration-none">
+            <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+          </a>
+        </div>
+        <div class="col-lg-6 col-6 text-left">
+          <form action="">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products">
+              <div class="input-group-append">
+                <span class="input-group-text bg-transparent text-primary">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-3 col-6 text-right" *ngIf="menuType!=='seller'">
+          <a class="btn border" routerLink="/dashboard">
+            <i class="fas fa-home text-primary"></i>
+          </a>
+          <a class="btn border" routerLink="/wishlist">
+            <i class="fas fa-heart text-primary"></i>
+            <span class="badge">3</span>
+          </a>
+          <a class="btn border" routerLink="/cart">
+            <i class="fas fa-shopping-cart text-primary"></i>
+            <span class="badge">{{cartItems}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <nav class="desktop-navigation-menu">
+      <div class="container" [ngSwitch]="menuType">
+        <ul class="desktop-menu-category-list" *ngSwitchCase="'default'">
+          <li class="menu-category">
+            <a routerLink="" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/womens-jackets" class="menu-title ">Categories</a>
+
+            <div class="dropdown-panel">
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Desktop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Laptop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Camera</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Tablet</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Headphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/electronics-banner-1.jpg" alt="headphone collection" width="250"
+                      height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Men's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Sports</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Jacket</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Sunglasses</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Women's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Perfume</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Cosmetics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Bags</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Smart Watch</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Smart TV</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Keyboard</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Mouse</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Microphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250"
+                      height="119" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/mens-jackets" class="menu-title">Men's</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a routerLink="/mens-jackets">Jackets</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-jeans">Jeans & Shorts</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-shirts">Shirts</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-tshirts">T-shirts</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/womens-jackets" class="menu-title">Women's</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a routerLink="/womens-jackets">Jackets</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-jeans">Jeans</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-sarees">Sarees</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-tops">Tops</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/home" class="menu-title">Jewelry</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Earrings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Couple Rings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Necklace</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Bracelets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/home" class="menu-title">Perfume</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Clothes Perfume</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Deodorant</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Flower Fragrance</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Air Freshener</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/seller" class="menu-title">Seller</a>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/user" class="menu-title">Agent</a>
+          </li>
+          
+          <li class="menu-category">
+            <a routerLink="/admin" class="menu-title">Admin</a>
+          </li>
+        </ul>
+
+        <ul class="desktop-menu-category-list" *ngSwitchCase="'user'">
+          <li class="menu-category">
+            <a routerLink="" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/womens-jackets" class="menu-title ">Categories</a>
+
+            <div class="dropdown-panel">
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Desktop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Laptop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Camera</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Tablet</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Headphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/electronics-banner-1.jpg" alt="headphone collection" width="250"
+                      height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Men's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Sports</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Jacket</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Sunglasses</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Women's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Perfume</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Cosmetics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Bags</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119" />
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="dropdown-panel-list">
+                <li class="menu-title">
+                  <a href="#">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Smart Watch</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Smart TV</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Keyboard</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Mouse</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">Microphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="./assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250"
+                      height="119" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/mens-jackets" class="menu-title">Men's</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a routerLink="/mens-jackets">Jackets</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-jeans">Jeans & Shorts</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-shirts">Shirts</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/mens-tshirts">T-shirts</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/womens-jackets" class="menu-title">Women's</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a routerLink="/womens-jackets">Jackets</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-jeans">Jeans</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-sarees">Sarees</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a routerLink="/womens-tops">Tops</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/home" class="menu-title">Jewelry</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Earrings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Couple Rings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Necklace</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Bracelets</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a routerLink="/home" class="menu-title">Perfume</a>
+
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#">Clothes Perfume</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Deodorant</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Flower Fragrance</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Air Freshener</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a class="menu-title" (click)="userLogOut()">Logout</a>
+          </li>
+          <li class="menu-category">
+            <a class="menu-title">{{userName | titlecase}}</a>
+          </li>
+        </ul>
+
+        <ul class="desktop-menu-category-list" *ngSwitchCase="'seller'">
+          <li class="menu-category">
+            <a routerLink="seller-add-product" class="menu-title">Add Product</a>
+          </li>
+          <li class="menu-category">
+            <a routerLink="/seller-home" class="menu-title">List</a>
+          </li>
+          <li class="menu-category">
+            <a (click)="logout()" class="menu-title">LogOut</a>
+          </li>
+          <li class="menu-category">
+            <a routerLink="/" class="menu-title">{{sellerName | titlecase}}</a>
+          </li>
+        </ul>
+
+        <ul class="desktop-menu-category-list" *ngSwitchCase="'admin'">
+          <li class="menu-category">
+            <a routerLink="/user-data" class="menu-title">User Data</a>
+          </li>
+          <li class="menu-category">
+            <a routerLink="/seller-data" class="menu-title">Seller Data</a>
+          </li>
+          <li class="menu-category">
+            <a (click)="adminLogout()" class="menu-title">LogOut</a>
+          </li>
+          <li class="menu-category">
+            <a routerLink="/" class="menu-title">{{sellerName | titlecase}}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="mobile-bottom-navigation" >
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <i name="menu-outline"></i>
+      </button>
+
+      <button class="action-btn">
+        <i name="bag-handle-outline"></i>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn">
+        <i name="home-outline"></i>
+      </button>
+
+      <button class="action-btn">
+        <i name="heart-outline"></i>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <i name="grid-outline"></i>
+      </button>
+    </div>
+    <!-- 
+    <nav class="mobile-navigation-menu has-scrollbar" data-mobile-menu>
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <i name="close-outline"></i>
+        </button>
+      </div>
+
+       <ul class="mobile-menu-category-list">
+        <li class="menu-category">
+          <a href="#" class="menu-title">Home</a>
+        </li>
+
+        <li class="menu-category">
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Men's</p>
+
+            <div>
+              <i name="add-outline" class="add-icon"></i>
+              <i name="remove-outline" class="remove-icon"></i>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Shirt</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Shorts & Jeans</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Safety Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Wallet</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-category">
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Women's</p>
+
+            <div>
+              <i name="add-outline" class="add-icon"></i>
+              <i name="remove-outline" class="remove-icon"></i>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Dress & Frock</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Necklace</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Makeup Kit</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-category">
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Jewelry</p>
+
+            <div>
+              <i name="add-outline" class="add-icon"></i>
+              <i name="remove-outline" class="remove-icon"></i>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Couple Rings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Necklace</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Bracelets</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-category">
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Perfume</p>
+
+            <div>
+              <i name="add-outline" class="add-icon"></i>
+              <i name="remove-outline" class="remove-icon"></i>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Clothes Perfume</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Deodorant</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Flower Fragrance</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="#" class="submenu-title">Air Freshener</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Blog</a>
+        </li>
+
+        <li class="menu-category">
+          <a href="#" class="menu-title">Hot Offers</a>
+        </li>
+      </ul> 
+
+      <div class="menu-bottom">
+        <ul class="menu-category-list">
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <i name="caret-back-outline" class="caret-back"></i>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Fren&ccedil;h</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <i name="caret-back-outline" class="caret-back"></i>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">EUR &euro;</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="menu-social-container">
+          <li>
+            <a href="#" class="social-link">
+              <i name="logo-facebook"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <i name="logo-twitter"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <i name="logo-instagram"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <i name="logo-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
+  </header>
+</body>
